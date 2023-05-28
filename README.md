@@ -6,7 +6,7 @@
 
 ### About project:
 
-- It's simple application on `Flask` with based `API` *(CRUD)*
+- It is simple application on `Flask` with based `API` *(CRUD)*
 - Application runs from `Docker` container <img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original.svg" width="25">
 - Realize `CI/CD` logic and deploy at server with `GitHub Actions`
 
@@ -48,11 +48,11 @@ Werkzeug==2.3.4
 
 ---
 
-#### You can use `vvladimirov.space` address and send your requests on this site or you can do it from your local machine
+#### You can use `vvladimirov.space` address and send your requests on this site, or you can do it from your local machine
 
 ---
 
-1) Copy this project on youl local machine `git clone https://github.com/cestxvcdim/SkyPro_Exam2.git`
+1) Copy this project on your local machine `git clone https://github.com/cestxvcdim/SkyPro_Exam2.git`
 2) Write in a terminal this command `docker-compose up --build -d`
 3) Open an application, which can send **GET/POST/PUT/DELETE** methods, f.e `Postman` and write in the browse page this address `http://localhost/`
 4) Write your request and push "SEND" button
@@ -111,7 +111,7 @@ Werkzeug==2.3.4
 
 ```json
 {
-    "id": 4
+    "id": 4,
     "name": "Note 4", 
     "text": "New note"
 }
@@ -130,7 +130,7 @@ Werkzeug==2.3.4
 
 ```json
 {
-    "id": 3
+    "id": 3,
     "name": "Updated note", 
     "text": "Updated text"
 }
