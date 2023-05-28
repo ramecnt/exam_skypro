@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, jsonify
 from flask_restx import Resource, Namespace
 from dao.models.note import NoteSchema
 from implemented import note_service
@@ -19,9 +19,9 @@ class NotesView(Resource):
 
     def post(self):
         data = request.json
-        note_service.create(data)
+        new_note = note_service.create(data)
 
-        return "", 201
+        return note_schema.dump(new_note), 201
 
 
 @note_ns.route('/<int:nid>')
@@ -33,16 +33,18 @@ class NoteView(Resource):
 
     def put(self, nid):
         data = request.json
-        note_service.update(data, nid)
+        updated_note = note_service.update(data, nid)
 
-        return "", 204
+        return note_schema.dump(updated_note), 204
 
     def patch(self, nid):
         data = request.json
-        note_service.update_partial(data, nid)
+        updated_note = note_service.update_partial(data, nid)
 
-        return "", 204
+        return note_schema.dump(updated_note), 204
 
     def delete(self, nid):
         note_service.delete(nid)
-        return "", 204
+        response = {"status": 204}
+
+        return jsonify(response), 204
