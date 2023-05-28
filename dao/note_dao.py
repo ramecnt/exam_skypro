@@ -21,11 +21,8 @@ class NoteDAO:
         return note
 
     def update(self, note):
-
         self.session.add(note)
         self.session.commit()
-
-        return note
 
     def delete(self, nid):
         note = self.get_one(nid)
