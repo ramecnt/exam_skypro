@@ -142,7 +142,7 @@ Werkzeug==2.3.4
 
 ```json
 {
-    "status": 204
+    "message": "Note has deleted successfully"
 }
 ```
 ---
