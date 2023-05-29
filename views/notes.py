@@ -1,13 +1,9 @@
 from flask import request
 from flask_restx import Resource, Namespace
-from dao.models.note import NoteSchema
-from implemented import note_service
+from implemented import note_service, note_schema, notes_schema
 
 
 note_ns = Namespace('notes')
-
-note_schema = NoteSchema()
-notes_schema = NoteSchema(many=True)
 
 
 @note_ns.route('/')
