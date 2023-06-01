@@ -48,11 +48,11 @@ Werkzeug==2.3.4
 
 ---
 
-#### You can use `vvladimirov.space` address and send your requests on this site, or you can do it from your local machine
+#### You can use `ramecnt.ru` address and send your requests on this site, or you can do it from your local machine
 
 ---
 
-1) Copy this project on your local machine `git clone https://github.com/cestxvcdim/SkyPro_Exam2.git`
+1) Copy this project on your local machine `git clone https://github.com/ramecnt/exam_skypro.git`
 2) Write in a terminal this command `docker-compose up --build -d`
 3) Open an application, which can send **GET/POST/PUT/DELETE** methods, f.e `Postman` and write in the browse page this address `http://localhost/`
 4) Write your request and push "SEND" button
@@ -62,7 +62,7 @@ Werkzeug==2.3.4
 
 ### Examples:
 
-#### Request: GET http://localhost/notes
+#### Request: GET http://localhost/birthdays/
 
 #### Response:
 
@@ -70,40 +70,44 @@ Werkzeug==2.3.4
 [
     {
         "id": 1, 
-        "name": "Note 1", 
-        "text": "Hello world!"
+        "fio": "Michael", 
+        "date_of_birthday": "2006-11-02",
+        "preference": "big gift"
     }, 
     {
         "id": 2, 
-        "name": "Note 2", 
-        "text": "Code your way to success"
+        "fio": "Egor", 
+        "date_of_birthday": "2006-02-02",
+        "preference": "very big gift"
     }, 
     {
         "id": 3, 
-        "name": "Note 3", 
-        "text": "Test"
+        "fio": "Roma", 
+        "date_of_birthday": "2006-05-02",
+        "preference": "big gift x2"
     }
 ]
 ```
 
-#### Request: GET http://localhost/notes/2
+#### Request: GET http://localhost/birthdays/2
 
 #### Response:
 
 ```json
 {
-    "id": 2, 
-    "name": "Note 2", 
-    "text": "Code your way to success"
+        "id": 2, 
+        "fio": "Egor", 
+        "date_of_birthday": "2006-02-02",
+        "preference": "very big gift"
 }
 ```
 
-#### Request: POST http://localhost/notes
+#### Request: POST http://localhost/birthdays
 
 ```json
 {
-    "name": "Note 4", 
-    "text": "New note"
+    "fio": "Artur", 
+    "preference": "very big gift"
 }
 ```
 
@@ -112,17 +116,18 @@ Werkzeug==2.3.4
 ```json
 {
     "id": 4,
-    "name": "Note 4", 
-    "text": "New note"
+    "fio": "Artur", 
+    "date_of_birthday": "2023-01-06",
+    "preference": "very big gift"
 }
 ```
 
-#### Request: PUT http://localhost/notes/3
+#### Request: PUT http://localhost/birthdays/3
 
 ```json
 {
-    "name": "Updated note", 
-    "text": "Updated text"
+    "fio": "Updated fio", 
+    "preference": "Updated preference"
 }
 ```
 
@@ -131,18 +136,18 @@ Werkzeug==2.3.4
 ```json
 {
     "id": 3,
-    "name": "Updated note", 
-    "text": "Updated text"
+    "fio": "Updated fio", 
+    "preference": "Updated preference"
 }
 ```
 
-#### Request: DELETE http://localhost/notes/2
+#### Request: DELETE http://localhost/birthdays/2
 
 #### Response:
 
 ```json
 {
-    "message": "Note has deleted successfully"
+    "message": "Birthday has deleted successfully"
 }
 ```
 ---
